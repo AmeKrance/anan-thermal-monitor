@@ -10,7 +10,7 @@
 # ============================================================
 param(
   [string]$InstallDir = (Join-Path $HOME 'anan-thermal-monitor'),
-  [string]$RepoUrl = 'https://github.com/YOUR_USERNAME/anan-thermal-monitor/archive/refs/heads/main.zip'
+  [string]$RepoUrl = 'https://github.com/AmeKrance/anan-thermal-monitor/archive/refs/heads/main.zip'
 )
 $ErrorActionPreference = 'Stop'
 

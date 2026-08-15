@@ -1,4 +1,4 @@
-# 安安热能监控 · 桌面萌宠温度监控（DSH 插件包）
+﻿# 安安热能监控 · 桌面萌宠温度监控（DSH 插件包）
 
 一个悬浮在 Windows 桌面上的紫白主题萌宠卡片，实时监控 **CPU / 内存 / GPU / NVMe 固态** 四项温度，并展示笔记本型号与硬件信息。这是一个标准的 **DeepSeek Harness (DSH) 插件包**，可通过 `dsh plugin --profile <name> add <包名>` 一条命令安装；也支持脱离 harness 独立运行。基于 PowerShell 5.1 + WPF 原生实现，无第三方桌面组件依赖。
 
@@ -29,7 +29,7 @@
 dsh plugin --profile web add anan-thermal-monitor
 
 # 或从 GitHub 仓库安装（推荐，无需 npm 账号）：
-dsh plugin --profile web add github:你的用户名/anan-thermal-monitor
+dsh plugin --profile web add github:AmeKrance/anan-thermal-monitor
 
 # 或使用本地已解压的源码目录：
 dsh plugin --profile web add /path/to/anan-thermal-monitor
