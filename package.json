@@ -1,6 +1,6 @@
 {
   "name": "anan-thermal-monitor",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "紫白桌宠温度监控：CPU/内存/GPU/NVMe 实时温度 + 硬件信息，悬浮于 Windows 桌面的 DSH 插件",
   "type": "module",
   "main": "lib/index.js",
