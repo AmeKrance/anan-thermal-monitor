@@ -44,6 +44,20 @@ if ($env:PET_NO_ELEVATE -ne '1') {
     exit
   }
 }
+
+# ---------- 隐藏控制台窗口(桌宠是纯 GUI, 不需要挂着 PowerShell 控制台) ----------
+try {
+  Add-Type -Name K -Namespace N -MemberDefinition '[DllImport("kernel32.dll")] public static extern bool FreeConsole();' -ErrorAction Stop
+  $null = [N.K]::FreeConsole()
+} catch {
+  # FreeConsole 失败时退回: 隐藏控制台窗口
+  try {
+    Add-Type -Name U -Namespace N2 -MemberDefinition '[DllImport("kernel32.dll")] public static extern IntPtr GetConsoleWindow(); [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr h, int c);' -ErrorAction Stop
+    $hw = [N2.U]::GetConsoleWindow()
+    if ($hw -ne [IntPtr]::Zero) { $null = [N2.U]::ShowWindow($hw, 0) }
+  } catch {}
+}
+
 Set-Content -Path $pidFile -Value ([string]$PID) -Encoding ASCII
 
 # ---------- 共享状态 ----------
