@@ -1,0 +1,34 @@
+{
+  "name": "anan-thermal-monitor",
+  "version": "1.0.0",
+  "description": "紫白桌宠温度监控：CPU/内存/GPU/NVMe 实时温度 + 硬件信息，悬浮于 Windows 桌面的 DSH 插件",
+  "type": "module",
+  "main": "lib/index.js",
+  "license": "MIT",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "desktop-pet",
+    "temperature",
+    "monitor",
+    "hardware",
+    "windows"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "assets",
+    "cordis.patch.yml",
+    "README.md"
+  ]
+}

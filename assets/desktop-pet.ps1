@@ -1,17 +1,18 @@
 ﻿# ============================================================
 #  desktop-pet.ps1 - 安安热能监控 · 桌面悬浮窗 + 硬件温度监控
-#  依赖: LibreHardwareMonitorLib.dll (tools/LibreHardwareMonitor)
-#  素材: 素材1号.jpg (工作区根目录)
+#  依赖: LibreHardwareMonitorLib.dll (同目录 LibreHardwareMonitor/)
+#  素材: 素材1号.jpg (同目录)
 #  运行: 首次会弹 UAC 提权(读取CPU温度/内存温度需要管理员)
+#  路径: 全部基于 $PSScriptRoot 相对定位, 可随包任意部署
 # ============================================================
 $ErrorActionPreference = 'Stop'
 
-# ---------- 常量 ----------
-$workspace   = 'G:\harness-organized'
+# ---------- 常量(全部相对脚本所在目录, 可移植) ----------
+$workspace   = $PSScriptRoot
 $imagePath   = Join-Path $workspace '素材1号.jpg'
-$lhmDir      = Join-Path $workspace 'tools\LibreHardwareMonitor'
+$lhmDir      = Join-Path $workspace 'LibreHardwareMonitor'
 $lhmDll      = Join-Path $lhmDir 'LibreHardwareMonitorLib.dll'
-$tempDir     = Join-Path $workspace 'temp'
+$tempDir     = Join-Path $env:TEMP 'anan-thermal-monitor'
 $pidFile     = Join-Path $tempDir 'desktop-pet.pid'
 $dataFile    = Join-Path $tempDir 'desktop-pet-data.json'
 $posFile     = Join-Path $tempDir 'desktop-pet-pos.txt'

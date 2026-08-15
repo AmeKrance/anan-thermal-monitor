@@ -1,0 +1,6 @@
+# anan-thermal-monitor bundle patch:
+# inserts this plugin as one row into the profile's layer stack.
+# Installed via: dsh plugin --profile web add anan-thermal-monitor
+- insert:
+    - id: anan-thermal-monitor
+      name: 'anan-thermal-monitor'
