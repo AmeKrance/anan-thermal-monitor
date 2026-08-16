@@ -7,11 +7,11 @@
 $ErrorActionPreference = 'Stop'
 
 # ---------- 常量 ----------
-$workspace   = $PSScriptRoot
+$workspace   = 'G:\harness-organized'
 $imagePath   = Join-Path $workspace '素材1号.jpg'
-$lhmDir      = Join-Path $workspace 'LibreHardwareMonitor'
+$lhmDir      = Join-Path $workspace 'tools\LibreHardwareMonitor'
 $lhmDll      = Join-Path $lhmDir 'LibreHardwareMonitorLib.dll'
-$tempDir     = Join-Path $env:TEMP 'anan-thermal-monitor'
+$tempDir     = Join-Path $workspace 'temp'
 $pidFile     = Join-Path $tempDir 'desktop-pet.pid'
 $dataFile    = Join-Path $tempDir 'desktop-pet-data.json'
 $posFile     = Join-Path $tempDir 'desktop-pet-pos.txt'
