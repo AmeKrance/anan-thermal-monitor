@@ -17,6 +17,18 @@
 
 ---
 
+## 📸 演示
+
+![桌宠截图 1](https://raw.githubusercontent.com/AmeKrance/anan-thermal-monitor/main/assets/screenshots/screenshot-1.png)
+
+![桌宠截图 2](https://raw.githubusercontent.com/AmeKrance/anan-thermal-monitor/main/assets/screenshots/screenshot-2.png)
+
+**交互演示动图：**
+
+![桌宠交互演示](https://raw.githubusercontent.com/AmeKrance/anan-thermal-monitor/main/assets/screenshots/demo.gif)
+
+---
+
 ## 📦 安装方法（推荐：DSH 插件包）
 
 ### 前提
