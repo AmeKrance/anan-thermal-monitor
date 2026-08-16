@@ -56,13 +56,35 @@ dsh plugin --profile web add /path/to/anan-thermal-monitor
 dsh plugin --profile web remove anan-thermal-monitor
 ```
 
-### 备选：独立运行（不接入 harness）
+---
+
+## 🖥️ 独立运行（不依赖 DeepSeek Harness / Bigfish）
+
+桌宠**本身就是独立程序**——脚本、素材、硬件监控库全部自包含，无需 DSH 或 Bigfish 即可运行。
+
+### 启动
+
+**双击 `start-pet.vbs`**（隐藏窗口启动，无控制台闪烁），或命令行：
 
 ```powershell
 powershell.exe -NoProfile -ExecutionPolicy Bypass -File assets\desktop-pet.ps1
 ```
 
-右键桌宠卡片 → "退出安安热能监控" 关闭。
+- 首次运行弹 **UAC 提权**（读取 CPU/内存温度需要管理员权限），点"是"
+- 启动后无控制台窗口残留；右键桌宠卡片 → "退出安安热能监控" 关闭
+
+### 开机自启（免 UAC 弹窗）
+
+双击 **`install-autostart.bat`**——通过 Windows 任务计划程序注册"登录时以最高权限运行"（管理员权限、**不再弹 UAC**）。卸载自启：双击 `uninstall-autostart.bat`。
+
+### 独立运行 vs DSH 插件
+
+| 方式 | 启动 | 特点 |
+|---|---|---|
+| **独立（vbs/自启）** | 双击 `start-pet.vbs` / 开机自动 | 不依赖 DSH/Bigfish；无 GUI 控制卡片 |
+| **DSH 插件** | `dsh plugin add` + 重启 | 随 DSH 启停；对话流内有实时温度卡片 + 启停按钮 |
+
+两种方式可共存（脚本有幂等检查，不会双开桌宠）。
 
 ---
 
